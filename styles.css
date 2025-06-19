@@ -31,16 +31,23 @@
 }
 /* From Uiverse.io by gharsh11032000 */ 
 
-.logo{
-    width:80px;
-    background: none;
+.letter-j {
+  font-size: 50px; /* Adjust size as needed */
+  font-weight: 900; /* Extra bold */
+  color: white;
+  margin-right: 20px;
+  -webkit-text-stroke: 3px black; /* Creates the black outline */
+  text-shadow:4px 4px 0 black;  /* 3D depth effect */
+  font-family: Arial, sans-serif; /* Close to image style, can customize */
+  transform: rotate(0deg); /* You can adjust rotation if needed */
+  user-select: none; /* Prevent text selection */
 }
 
 .logo-container{
     display:flex;
     justify-content: baseline;
     align-items: center;
-    background: none;
+ 
 }
 
 .logo-text{
@@ -74,20 +81,124 @@ a{
     transition:0.8s;
     font-weight: bold;
 }
-#start {
-      padding: 10px 20px; /* Added horizontal padding for a better pill look */
-      background-color: aqua;
-      border: none;
-      border-radius: 90px;
-      cursor: pointer; 
-} 
-#stop {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 90px;
-    background-color: aqua;
-    cursor:pointer;
-} 
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
 
 
 
@@ -610,7 +721,7 @@ a{
   font-size:90px;
 }
 
-.skill-subHeading{
+/* .skill-subHeading{
   margin-top: 1rem;
   width:85%;
   text-align: justify;
@@ -618,6 +729,71 @@ a{
 
 .skill-subHeading p{
   margin:15px 0;
+} */
+/* Container Styling */
+.skill-container-left {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Heading Styling */
+.skill-heading {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.2;
+}
+
+.caps {
+  font-size: 60px;
+  color: #ff6ec4; /* You can pick any highlight color */
+}
+
+/* Special Styling for 'MyTech Stack' */
+.skill-heading br + * {
+  background: linear-gradient(90deg, #fc466b, #3f5efb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  display: inline-block;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fc466b, 0 0 10px #fc466b;
+  }
+  to {
+    text-shadow: 0 0 10px #3f5efb, 0 0 20px #3f5efb;
+  }
+}
+
+/* Subheading Paragraph Styling */
+.skill-subHeading p {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skill-heading {
+    font-size: 36px;
+  }
+  .caps {
+    font-size: 48px;
+  }
+  .skill-subHeading p {
+    font-size: 16px;
+  }
 }
 
 .contactus-form-container{
