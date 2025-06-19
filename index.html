@@ -357,6 +357,44 @@
       backSpeed: 80,
       backDelay: 1000,
     });
+      let hexCode = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+    function colorGenerator() {
+        let colorCode = '#';
+
+        for (let i = 0; i < 6; i++) {
+            colorCode += hexCode[Math.floor(Math.random() * 16)];
+        }
+
+        return colorCode;
+    }
+
+    const start = document.querySelector("#start");
+    const stop = document.querySelector("#stop");
+
+    let intervalId = null;
+
+    function handleChange() {
+         let color = colorGenerator(); // Generate new color every time
+        document.body.style.backgroundColor = color;
+        console.log('Color Changed to:', color);
+    } 
+    
+    function startChanging() {
+        if (!intervalId) {
+            intervalId = setInterval(handleChange, 1000);
+        }
+    }
+
+    function stopHandler() { 
+      
+       clearInterval(intervalId);
+           intervalId = null;
+          console.log('Color Changing Stopped');       
+    } 
+
+    start.addEventListener('click', startChanging);
+    stop.addEventListener('click', stopHandler);
   </script>
 </body>
 </html>
