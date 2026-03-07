@@ -6,6 +6,7 @@ function App() {
         if (typeof window === 'undefined') return true;
         return localStorage.getItem('theme') !== 'light';
     });
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const body = document.body;
@@ -39,14 +40,13 @@ function App() {
     return (
         <>
             <ParticleBackground />
-            <header className="w-full absolute top-6 left-0 right-0 z-50">
-                <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <img src="/images/imag3e-removebg-preview.png" width="40" height="40"
-                            className="logo-img object-cover rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" alt="Logo" />
-                        <span className="font-semibold text-gray-800">Satya Prakash</span>
+            <header className="w-full absolute top-2 sm:top-6 left-0 right-0 z-50">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 py-2 sm:py-4 flex items-center justify-between relative">
+                    <div className="flex items-center gap-2 sm:gap-3 md:pl-12">
+                        <img src="/images/imag3e-removebg-preview.png" width="32" height="32"
+                            className="logo-img w-7 h-7 sm:w-8 2xl:w-10 sm:h-8 2xl:h-10 object-cover rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" alt="Satya Prakash" />
                     </div>
-                    <nav className="hidden md:flex gap-8 text-gray-700 font-medium cursor-pointer">
+                    <nav className="hidden md:flex gap-5 xl:gap-8 2xl:gap-8 text-gray-700 font-medium cursor-pointer text-sm xl:text-base 2xl:text-lg">
                         <a className="hover:text-purple-600 transition" href="#home">Home</a>
                         <a className="hover:text-purple-600 transition" href="#skills">Skills</a>
                         <a className="hover:text-purple-600 transition" href="#experience">Experience</a>
@@ -99,38 +99,58 @@ function App() {
                         </div>
                         <button
                             id="menu-toggle"
-                            className="md:hidden w-10 h-10 rounded-lg bg-white/70 flex items-center justify-center cursor-pointer shadow-sm">
-                            <i className='bx bx-menu text-xl'></i>
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="md:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/70 dark:bg-gray-800/70 backdrop-blur-md flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-95">
+                            <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'} text-xl sm:text-2xl dark:text-white`}></i>
                         </button>
+                    </div>
+                    {/* Mobile Menu Overlay */}
+                    <div className={`fixed inset-0 bg-white/95 dark:bg-[#050816]/98 z-[60] flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
+                        <button
+                            onClick={() => setIsMenuOpen(false)}
+                            className="absolute top-10 right-10 text-4xl dark:text-white"
+                        >
+                            <i className='bx bx-x'></i>
+                        </button>
+                        {['Home', 'Skills', 'Experience', 'Contact'].map((item) => (
+                            <a
+                                key={item}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="text-2xl font-bold dark:text-white hover:text-purple-600 transition"
+                                href={`#${item.toLowerCase() === 'contact' ? 'contact' : item.toLowerCase()}`}
+                            >
+                                {item}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </header >
 
-            <section id="home" className="relative w-full min-h-screen bg-transparent">
-                <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10 min-h-screen flex items-center">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
-                        <div className="space-y-6 text-center md:text-left flex flex-col justify-center pb-12 hero-stagger">
-                            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+            <section id="home" className="relative w-full h-screen bg-transparent overflow-hidden">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 h-full flex items-center pt-20 sm:pt-28">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 w-full pt-4 sm:pt-0">
+                        <div className="space-y-2 sm:space-y-4 md:space-y-6 text-center md:text-left flex flex-col justify-center hero-stagger md:pl-12">
+                            <h1 className="text-xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-bold text-gray-800 leading-tight">
                                 <span className="text-purple-800">Hi,</span> I'm <br />
-                                <span className="text-purple-800">Satya Prakash</span>
+                                <span className="text-purple-800 text-xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl">Satya Prakash</span>
                             </h1>
-                            <h2 className="text-3xl font-semibold text-purple-700">Full Stack Developer</h2>
-                            <div className="relative w-1/4 h-[2px] mx-auto md:mx-0">
+                            <h2 className="text-sm sm:text-xl lg:text-2xl 2xl:text-4xl font-semibold text-purple-700">Full Stack Developer</h2>
+                            <div className="relative w-1/4 h-[1.5px] mx-auto md:mx-0">
                                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/70 to-transparent shadow-[0_0_4px_rgba(192,132,252,0.4)] [clip-path:polygon(0%_0%,100%_40%,100%_60%,0%_100%)]"></span>
                             </div>
-                            <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-lg hero-subtext">
-                                I specialize in building modern, responsive MERN stack applications, as well as cloud-based solutions. Let’s work together to create something amazing!
+                            <p className="text-gray-600 max-w-md 2xl:max-w-xl mx-auto md:mx-0 text-xs sm:text-sm 2xl:text-xl hero-subtext leading-relaxed">
+                                I enjoy turning ideas into complete full-stack applications with smooth user experience and solid backend logic.
                             </p>
-                            <div className="flex gap-5 justify-center md:justify-start pt-4">
-                                <button className="hero-cta hero-primary rounded-xl text-white font-bold shadow-lg hover:scale-105 transition active:scale-95">
+                            <div className="flex gap-3 sm:gap-5 justify-center md:justify-start pt-1 sm:pt-4">
+                                <button className="hero-cta hero-primary rounded-xl text-white shadow-lg hover:scale-105 transition active:scale-95 text-xs sm:text-sm xl:text-base 2xl:text-lg xl:px-6 2xl:px-8">
                                     Hire me
                                 </button>
-                                <button className="hero-cta hero-secondary rounded-xl font-bold transition active:scale-95">
+                                <button className="hero-cta hero-secondary rounded-xl transition active:scale-95 text-xs sm:text-sm xl:text-base 2xl:text-lg xl:px-6 2xl:px-8">
                                     Explore Me
                                 </button>
                             </div>
                         </div>
-                        <div className="relative flex justify-center items-center pb-10 md:-translate-y-12 hero-image-reveal">
+                        <div className="relative flex justify-center items-center pb-4 sm:pb-0 md:-translate-y-4 hero-image-reveal">
                             <div className="hero-orbit-inner flex items-center justify-center">
                                 <div className="hero-avatar hover:scale-105 transition duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-10">
                                     <img src="/images/ChatGPT Image Feb 8, 2026, 11_00_06 PM.png" loading="lazy" className="hero-avatar-img" alt="Hero" />
@@ -141,46 +161,80 @@ function App() {
                 </div>
             </section>
 
-            <section id="skills" className="relative w-full py-20 bg-transparent">
-                <div className="max-w-7xl mx-auto px-6">
-                    <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-12 text-center">Technical Skills</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="experience-card bg-transparent flex flex-col items-center p-8">
-                            <div className="floating-icon text-indigo-600 animate-float mb-4">
-                                <i className="bx bxl-react text-7xl"></i>
+            <section id="skills" className="relative w-full py-16 sm:py-24 2xl:py-40 bg-transparent overflow-hidden">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 relative">
+                    {/* Vertical Label */}
+                    <div className="skills-vertical-label hidden lg:flex">
+                        <span>SKILLS</span>
+                    </div>
+
+                    <div className="lg:pl-24 w-full">
+
+                        <div className="flex flex-col 2xl:flex-row gap-16 2xl:gap-24 w-full">
+                            {/* Tools & Technologies */}
+                            <div className="reveal flex-1 w-full">
+                                <h3 className="skills-category-title text-center 2xl:text-left">Tools & Technologies</h3>
+                                <div className="skills-grid mt-6">
+                                    {[
+                                        { name: 'HTML', icon: 'bxl-html5', color: 'text-[#E34F26]' },
+                                        { name: 'CSS', icon: 'bxl-css3', color: 'text-[#1572B6]' },
+                                        { name: 'JAVASCRIPT', icon: 'bxl-javascript', color: 'text-[#F7DF1E]' },
+                                        { name: 'PYTHON', icon: 'bxl-python', color: 'text-[#3776AB]' },
+                                        { name: 'JAVA', icon: 'bx-code', color: 'text-[#007396]' },
+                                        { name: 'OOPS', icon: 'bx-layer', color: 'text-[#7c3aed]' },
+                                        { name: 'GIT', icon: 'bxl-git', color: 'text-[#F05032]' },
+                                        { name: 'GITHUB', icon: 'bxl-github', color: 'icon-github' },
+                                        { name: 'FIGMA', icon: 'bxl-figma', color: 'text-[#F24E1E]' },
+                                        { name: 'WEBPACK', icon: 'bx-package', color: 'text-[#8DD6F9]' }
+                                    ].map((skill) => (
+                                        <div key={skill.name} className="skill-card-wrapper">
+                                            <div className="skill-card group">
+                                                <div className={`skill-icon-box ${skill.color}`}>
+                                                    <i className={`bx ${skill.icon}`}></i>
+                                                </div>
+                                                <span className="skill-name">{skill.name}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <h3 className="text-xl font-bold text-purple-900">React</h3>
-                            <p className="text-sm text-purple-700 text-center mt-2">Frontend development with modern hooks and state management.</p>
-                        </div>
-                        <div className="experience-card bg-transparent flex flex-col items-center p-8">
-                            <div className="floating-icon text-green-600 animate-float-delay-1 mb-4">
-                                <i className="bx bxl-nodejs text-7xl"></i>
+
+                            {/* Frameworks & Libraries */}
+                            <div className="reveal flex-1 w-full mt-8 2xl:mt-0">
+                                <h3 className="skills-category-title text-center 2xl:text-left">Frameworks & Libraries</h3>
+                                <div className="skills-grid mt-6">
+                                    {[
+                                        { name: 'REACT.JS', icon: 'bxl-react', color: 'text-[#61DAFB]' },
+                                        { name: 'TYPESCRIPT', icon: 'bxl-typescript', color: 'text-[#3178C6]' },
+                                        { name: 'NODE.JS', icon: 'bxl-nodejs', color: 'text-[#339933]' },
+                                        { name: 'MONGODB', icon: 'bxl-mongodb', color: 'text-[#47A248]' },
+                                        { name: 'POSTGRESQL', icon: 'bxl-postgresql', color: 'text-[#336791]' },
+                                        { name: 'TAILWIND CSS', icon: 'bxl-tailwind-css', color: 'text-[#06B6D4]' },
+                                        { name: 'BOOTSTRAP', icon: 'bxl-bootstrap', color: 'text-[#7952B3]' },
+                                        { name: 'REDUX.JS', icon: 'bxl-redux', color: 'text-[#764ABC]' },
+                                        { name: 'EXPRESS.JS', icon: 'bx-server', color: 'icon-express' },
+                                        { name: 'MONGOOSE.JS', icon: 'bx-data', color: 'text-[#880000]' }
+                                    ].map((skill) => (
+                                        <div key={skill.name} className="skill-card-wrapper">
+                                            <div className="skill-card group">
+                                                <div className={`skill-icon-box ${skill.color}`}>
+                                                    <i className={`bx ${skill.icon}`}></i>
+                                                </div>
+                                                <span className="skill-name">{skill.name}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <h3 className="text-xl font-bold text-purple-900">Node.js</h3>
-                            <p className="text-sm text-purple-700 text-center mt-2">Scalable backend services and RESTful API development.</p>
-                        </div>
-                        <div className="experience-card bg-transparent flex flex-col items-center p-8">
-                            <div className="floating-icon text-blue-500 animate-float-delay-2 mb-4">
-                                <i className="bx bxl-mongodb text-7xl"></i>
-                            </div>
-                            <h3 className="text-xl font-bold text-purple-900">MongoDB</h3>
-                            <p className="text-sm text-purple-700 text-center mt-2">NoSQL database modeling and complex data aggregation.</p>
-                        </div>
-                        <div className="experience-card bg-transparent flex flex-col items-center p-8">
-                            <div className="floating-icon text-yellow-500 animate-float-delay-3 mb-4">
-                                <i className="bx bxl-javascript text-7xl"></i>
-                            </div>
-                            <h3 className="text-xl font-bold text-purple-900">JavaScript</h3>
-                            <p className="text-sm text-purple-700 text-center mt-2">Core logic, ES6+ features, and modern web standards.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="experience" className="relative w-full py-20 bg-transparent">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex items-center justify-between mb-10">
-                        <h2 className="text-4xl md:text-5xl font-bold text-purple-800">Experience</h2>
+            <section id="experience" className="relative w-full py-20 2xl:py-40 bg-transparent">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6">
+                    <div className="flex items-center justify-between mb-10 2xl:mb-20">
+                        <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-purple-800">Experience</h2>
                         <button className="text-purple-700 font-semibold hover:text-purple-900 transition flex items-center gap-2">
                             View all
                             <i className='bx bx-right-arrow-alt text-xl'></i>
@@ -233,9 +287,9 @@ function App() {
                 </div>
             </section>
 
-            <section id="work" className="relative w-full py-20 bg-transparent">
-                <div className="max-w-7xl mx-auto px-6 text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-12">Latest Work</h2>
+            <section id="work" className="relative w-full py-20 2xl:py-40 bg-transparent">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 text-center">
+                    <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-purple-800 mb-12 2xl:mb-20">Latest Work</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <article className="pt-card bg-transparent overflow-hidden group">
                             <div className="h-48 bg-purple-200/50 rounded-lg mb-4"></div>
@@ -256,8 +310,8 @@ function App() {
                 </div>
             </section>
 
-            <section id="contact" className="relative w-full py-20 bg-transparent">
-                <div className="max-w-7xl mx-auto px-6">
+            <section id="contact" className="relative w-full py-20 2xl:py-40 bg-transparent">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6">
                     <div className="portfolio-testimonials-wrap">
                         <article className="pt-card pt-portfolio bg-transparent">
                             <h2 className="pt-title">Contact Us</h2>
