@@ -232,55 +232,55 @@ function App() {
             </section>
 
             <section id="experience" className="relative w-full py-20 2xl:py-40 bg-transparent">
-                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6">
-                    <div className="flex items-center justify-between mb-10 2xl:mb-20">
-                        <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-purple-800">Experience</h2>
-                        <button className="text-purple-700 font-semibold hover:text-purple-900 transition flex items-center gap-2">
-                            View all
-                            <i className='bx bx-right-arrow-alt text-xl'></i>
-                        </button>
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 relative">
+                    {/* Vertical Label */}
+                    <div className="skills-vertical-label hidden lg:flex">
+                        <span>EXPERIENCE</span>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <aside className="experience-card bg-transparent">
-                            <h3 className="text-2xl font-bold text-purple-800 mb-2">2024 - Present</h3>
-                            <div className="experience-timeline">
-                                <div className="timeline-item">
-                                    <h4 className="text-lg font-semibold text-purple-900">Junior Full Stack Developer</h4>
-                                    <p className="text-sm text-purple-700">Tech Company | Product Platform</p>
-                                </div>
-                                <div className="timeline-item">
-                                    <h4 className="text-lg font-semibold text-purple-900">Full Stack Developer</h4>
-                                    <p className="text-sm text-purple-700">Freelance Projects | SaaS + E-Commerce</p>
-                                </div>
-                                <div className="timeline-item">
-                                    <h4 className="text-lg font-semibold text-purple-900">Web Development Intern</h4>
-                                    <p className="text-sm text-purple-700">Client Websites | UI Engineering</p>
-                                </div>
-                            </div>
-                            <p className="mt-6 text-sm text-purple-700 font-medium">2024 - 2025: Internship & Training</p>
-                        </aside>
-                        <div className="experience-card bg-transparent">
-                            <h3 className="text-3xl font-bold text-purple-800 mb-6">Tech Company</h3>
-                            <div className="space-y-5">
-                                <article className="exp-highlight">
-                                    <p className="exp-tag">Senior Full Stack Dev.</p>
-                                    <h4 className="text-xl font-semibold mb-1">Enterprise Dashboard Suite</h4>
-                                    <p className="text-sm md:text-base text-purple-100/95">Built and maintained scalable MERN products, reusable UI components, and internal analytics modules.</p>
-                                    <div className="exp-chip-row">
-                                        <span className="exp-chip">React</span>
-                                        <span className="exp-chip">Node.js</span>
-                                        <span className="exp-chip">MongoDB</span>
-                                        <span className="exp-chip">AWS</span>
+
+                    <div className="lg:pl-24 w-full">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <aside className="experience-card">
+                                <h3 className="text-3xl font-bold text-purple-800 mb-4">2025 – Present</h3>
+                                <div className="experience-timeline">
+                                    <div className="timeline-item">
+                                        <h4 className="text-xl font-semibold text-purple-900">Full Stack Developer</h4>
+                                        <p className="text-base font-medium text-purple-700">WayOne IT Solutions</p>
+                                        <p className="text-sm text-purple-500">Jan 2026 – Present</p>
                                     </div>
-                                </article>
-                                <article className="exp-highlight exp-highlight-alt">
-                                    <p className="exp-tag">Cloud Analytics Platform</p>
-                                    <h4 className="text-xl font-semibold mb-1">Data + Performance Insights</h4>
-                                    <p className="text-sm md:text-base text-purple-100/95">Delivered dashboards for business reporting, optimized API response times, and improved deployment automation.</p>
-                                    <button className="mt-3 px-4 py-2 rounded-md bg-white/25 hover:bg-white/35 transition text-sm font-semibold">
-                                        View details
-                                    </button>
-                                </article>
+                                    <div className="timeline-item">
+                                        <h4 className="text-xl font-semibold text-purple-900">Full Stack Developer</h4>
+                                        <p className="text-base font-medium text-purple-700">WTF Gyms</p>
+                                        <p className="text-sm text-purple-500">July 2025 – Dec 2025</p>
+                                    </div>
+                                </div>
+                            </aside>
+                            <div className="experience-card">
+                                <h3 className="text-3xl font-bold text-purple-800 mb-6">Experience Details</h3>
+                                <div className="space-y-5">
+                                    <article className="exp-highlight">
+                                        <p className="exp-tag">WayOne IT Solutions</p>
+                                        <h4 className="text-xl font-semibold mb-1">Full Stack Developer</h4>
+                                        <p className="text-sm md:text-base text-purple-100/95 font-light leading-relaxed">Building and deploying scalable full-stack applications using the MERN stack, designing RESTful APIs, and implementing responsive UI components.</p>
+                                        <div className="exp-chip-row">
+                                            <span className="exp-chip">React</span>
+                                            <span className="exp-chip">Node.js</span>
+                                            <span className="exp-chip">MongoDB</span>
+                                            <span className="exp-chip">Express</span>
+                                        </div>
+                                    </article>
+                                    <article className="exp-highlight exp-highlight-alt">
+                                        <p className="exp-tag">WTF Gyms</p>
+                                        <h4 className="text-xl font-semibold mb-1">Full Stack Developer</h4>
+                                        <p className="text-sm md:text-base text-purple-100/95 font-light leading-relaxed">Developed full-stack features for the gym platform including user auth, membership management, and admin dashboard with real-time data.</p>
+                                        <div className="exp-chip-row">
+                                            <span className="exp-chip">React</span>
+                                            <span className="exp-chip">Node.js</span>
+                                            <span className="exp-chip">MongoDB</span>
+                                            <span className="exp-chip">Express</span>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
                         </div>
                     </div>
