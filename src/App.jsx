@@ -3,8 +3,8 @@ import ParticleBackground from './ParticleBackground';
 
 function App() {
     const [isDark, setIsDark] = useState(() => {
-        if (typeof window === 'undefined') return true;
-        return localStorage.getItem('theme') !== 'light';
+        if (typeof window === 'undefined') return false;
+        return localStorage.getItem('theme') === 'dark';
     });
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,6 +48,7 @@ function App() {
                     </div>
                     <nav className="hidden md:flex gap-5 xl:gap-8 2xl:gap-8 text-gray-700 font-medium cursor-pointer text-sm xl:text-base 2xl:text-lg">
                         <a className="hover:text-purple-600 transition" href="#home">Home</a>
+                        <a className="hover:text-purple-600 transition" href="#about">About</a>
                         <a className="hover:text-purple-600 transition" href="#skills">Skills</a>
                         <a className="hover:text-purple-600 transition" href="#experience">Experience</a>
                         {/* <a className="hover:text-purple-600 transition" href="#work">Work</a>
@@ -112,7 +113,7 @@ function App() {
                         >
                             <i className='bx bx-x'></i>
                         </button>
-                        {['Home', 'Skills', 'Experience', 'Contact'].map((item) => (
+                        {['Home', 'About', 'Skills', 'Experience', 'Contact'].map((item) => (
                             <a
                                 key={item}
                                 onClick={() => setIsMenuOpen(false)}
@@ -180,7 +181,7 @@ function App() {
                                         { name: 'CSS', icon: 'bxl-css3', color: 'text-[#1572B6]' },
                                         { name: 'JAVASCRIPT', icon: 'bxl-javascript', color: 'text-[#F7DF1E]' },
                                         { name: 'PYTHON', icon: 'bxl-python', color: 'text-[#3776AB]' },
-                                        { name: 'JAVA', icon: 'bx-code', color: 'text-[#007396]' },
+                                        { name: 'JAVA', icon: 'bxl-java', color: 'text-[#007396]' },
                                         { name: 'OOPS', icon: 'bx-layer', color: 'text-[#7c3aed]' },
                                         { name: 'GIT', icon: 'bxl-git', color: 'text-[#F05032]' },
                                         { name: 'GITHUB', icon: 'bxl-github', color: 'icon-github' },
@@ -231,55 +232,57 @@ function App() {
                 </div>
             </section>
 
-            <section id="experience" className="relative w-full py-20 2xl:py-40 bg-transparent">
+            <section id="experience" className="relative w-full py-20 2xl:py-40 bg-transparent overflow-hidden">
                 <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 relative">
                     {/* Vertical Label */}
                     <div className="skills-vertical-label hidden lg:flex">
                         <span>EXPERIENCE</span>
                     </div>
 
-                    <div className="lg:pl-24 w-full">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <aside className="experience-card">
-                                <h3 className="text-3xl font-bold text-purple-800 mb-4">2025 – Present</h3>
-                                <div className="experience-timeline">
-                                    <div className="timeline-item">
-                                        <h4 className="text-xl font-semibold text-purple-900">Full Stack Developer</h4>
-                                        <p className="text-base font-medium text-purple-700">WayOne IT Solutions</p>
-                                        <p className="text-sm text-purple-500">Jan 2026 – Present</p>
+                    <div className="w-full max-w-6xl mx-auto">
+                        <div className="relative">
+                            {/* Centered Timeline Line */}
+                            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-300 via-purple-500/50 to-transparent transform -translate-x-1/2" aria-hidden="true" />
+
+                            <div className="space-y-16 lg:space-y-32 py-10">
+                                {/* Experience Item 1 */}
+                                <div className="reveal relative flex flex-col lg:flex-row items-center lg:items-center w-full group">
+                                    {/* Left Side: Desktop - Duration & Address */}
+                                    <div className="w-full lg:w-1/2 lg:pr-16 text-center lg:text-right mb-6 lg:mb-0">
+                                        <p className="text-sm sm:text-base lg:text-lg font-bold text-purple-600 dark:text-purple-400 mb-3 tracking-widest uppercase">
+                                            Jan 2026 – Present
+                                        </p>
+                                        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-black text-purple-600 dark:text-purple-700 mb-3 tracking-tight">
+                                            WayOne IT Solutions
+                                        </h3>
+                                        <p className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium italic max-w-md lg:ml-auto">
+                                            Ramesh Nagar, New Delhi, Above ICICI, 3rd Floor
+                                        </p>
                                     </div>
-                                    <div className="timeline-item">
-                                        <h4 className="text-xl font-semibold text-purple-900">Full Stack Developer</h4>
-                                        <p className="text-base font-medium text-purple-700">WTF Gyms</p>
-                                        <p className="text-sm text-purple-500">July 2025 – Dec 2025</p>
-                                    </div>
+
+                                    {/* Timeline Dot */}
+                                    <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-purple-600 border-4 border-white dark:border-gray-950 shadow-[0_0_20px_rgba(124,58,237,0.5)] z-10 group-hover:scale-125 transition-transform" />
+
+
                                 </div>
-                            </aside>
-                            <div className="experience-card">
-                                <h3 className="text-3xl font-bold text-purple-800 mb-6">Experience Details</h3>
-                                <div className="space-y-5">
-                                    <article className="exp-highlight">
-                                        <p className="exp-tag">WayOne IT Solutions</p>
-                                        <h4 className="text-xl font-semibold mb-1">Full Stack Developer</h4>
-                                        <p className="text-sm md:text-base text-purple-100/95 font-light leading-relaxed">Building and deploying scalable full-stack applications using the MERN stack, designing RESTful APIs, and implementing responsive UI components.</p>
-                                        <div className="exp-chip-row">
-                                            <span className="exp-chip">React</span>
-                                            <span className="exp-chip">Node.js</span>
-                                            <span className="exp-chip">MongoDB</span>
-                                            <span className="exp-chip">Express</span>
-                                        </div>
-                                    </article>
-                                    <article className="exp-highlight exp-highlight-alt">
-                                        <p className="exp-tag">WTF Gyms</p>
-                                        <h4 className="text-xl font-semibold mb-1">Full Stack Developer</h4>
-                                        <p className="text-sm md:text-base text-purple-100/95 font-light leading-relaxed">Developed full-stack features for the gym platform including user auth, membership management, and admin dashboard with real-time data.</p>
-                                        <div className="exp-chip-row">
-                                            <span className="exp-chip">React</span>
-                                            <span className="exp-chip">Node.js</span>
-                                            <span className="exp-chip">MongoDB</span>
-                                            <span className="exp-chip">Express</span>
-                                        </div>
-                                    </article>
+
+                                {/* Experience Item 2 */}
+                                <div className="reveal relative flex flex-col lg:flex-row-reverse items-center lg:items-center w-full group">
+                                    {/* Right Side (since reversed): Desktop - Duration & Address */}
+                                    <div className="w-full lg:w-1/2 lg:pl-16 text-center lg:text-left mb-6 lg:mb-0">
+                                        <p className="text-sm sm:text-base lg:text-lg font-bold text-purple-600 dark:text-purple-400 mb-3 tracking-widest uppercase">
+                                            July 2025 – Dec 2025
+                                        </p>
+                                        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-black text-purple-600 dark:text-purple-700 mb-3 tracking-tight">
+                                            WTF Gyms
+                                        </h3>
+                                        <p className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium italic max-w-md">
+                                            Sector 9, AMCO Tower, 3rd Floor, Noida
+                                        </p>
+                                    </div>
+
+                                    {/* Timeline Dot */}
+                                    <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-purple-600 border-4 border-white dark:border-gray-950 shadow-[0_0_20px_rgba(124,58,237,0.5)] z-10 group-hover:scale-125 transition-transform" />
                                 </div>
                             </div>
                         </div>
