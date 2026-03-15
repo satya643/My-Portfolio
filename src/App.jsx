@@ -446,8 +446,11 @@ function App() {
                     </div>
 
                     {/* Bottom Utility Bar */}
-                    <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-900 dark:text-gray-100 text-[11px] font-bold">
-                        <p className="tracking-wide">&copy; {new Date().getFullYear()} Satya Prakash. Designed with Passion & Precision.</p>
+                    <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-900 dark:text-gray-100 text-[11px]">
+                        <p className="tracking-wide">
+                            &copy; {new Date().getFullYear()} <span className="text-sky-600 dark:text-cyan-400">Satya Prakash</span>.
+                            Designed with <span className=" bg-gradient-to-r from-sky-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent tracking-wider">Passion & Precision</span>.
+                        </p>
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                             className="w-8 h-8 rounded-full glass-icon flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all shadow-md active:scale-95 group"
