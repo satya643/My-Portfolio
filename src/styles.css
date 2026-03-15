@@ -1875,3 +1875,29 @@ body:not(.dark-mode) .cssbuttons-io-button {
     border-radius: 1rem !important;
   }
 }
+
+/* Mobile Menu Overlay Robust Styles */
+.mobile-menu-overlay {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  transition: background-color 0.5s ease;
+}
+
+body.dark-mode .mobile-menu-overlay {
+  background-color: #050816 !important;
+}
+
+.mobile-menu-link {
+  color: #1f2937 !important; /* text-gray-800 */
+}
+
+body.dark-mode .mobile-menu-link {
+  color: #ffffff !important;
+}
+
+.mobile-menu-close {
+  color: #1f2937 !important;
+}
+
+body.dark-mode .mobile-menu-close {
+  color: #ffffff !important;
+}

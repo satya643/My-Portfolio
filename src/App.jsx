@@ -80,14 +80,14 @@ function App() {
                             id="menu-toggle"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="md:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/70 dark:bg-gray-800/70 backdrop-blur-md flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-95">
-                            <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'} text-xl sm:text-2xl dark:text-white`}></i>
+                            <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'} text-xl sm:text-2xl text-gray-800 dark:text-white`}></i>
                         </button>
                     </div>
                     {/* Mobile Menu Overlay */}
-                    <div className={`fixed inset-0 bg-white/95 dark:bg-[#050816]/98 z-[60] flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
+                    <div className={`fixed inset-0 mobile-menu-overlay z-[60] flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
                         <button
                             onClick={() => setIsMenuOpen(false)}
-                            className="absolute top-10 right-10 text-4xl dark:text-white"
+                            className="absolute top-10 right-10 text-4xl mobile-menu-close"
                         >
                             <i className='bx bx-x'></i>
                         </button>
@@ -95,7 +95,7 @@ function App() {
                             <a
                                 key={item}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="text-2xl font-bold dark:text-white hover:text-purple-600 transition"
+                                className="text-2xl font-bold mobile-menu-link hover:text-purple-600 transition"
                                 href={`#${item.toLowerCase() === 'contact' ? 'contact' : item.toLowerCase()}`}
                             >
                                 {item}
@@ -414,7 +414,7 @@ function App() {
                                     <li><a href="#home" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Home</a></li>
                                     <li><a href="#skills" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Skills</a></li>
                                     <li><a href="#experience" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Experience</a></li>
-                                    <li><a href="#contact" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Contact Us</a></li>
+                                    <li><a href="#contact" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Contact Me</a></li>
                                 </ul>
                             </div>
 
