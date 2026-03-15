@@ -109,15 +109,15 @@ function App() {
                 <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 h-full flex items-center pt-20 sm:pt-28">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 w-full pt-4 sm:pt-0">
                         <div className="space-y-2 sm:space-y-4 md:space-y-6 text-center md:text-left flex flex-col justify-center hero-stagger md:pl-12">
-                            <h1 className="text-xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-bold text-gray-800 leading-tight">
+                            <h1 className="text-5xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-bold text-gray-800 leading-tight px-2 sm:px-0">
                                 <span className="text-purple-800">Hi,</span> I'm <br />
-                                <span className="text-purple-800 text-xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl">Satya Prakash</span>
+                                <span className="text-purple-800 text-5xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl">Satya Prakash</span>
                             </h1>
-                            <h2 className="text-sm sm:text-xl lg:text-2xl 2xl:text-4xl font-semibold text-purple-700">Full Stack Developer</h2>
+                            <h2 className="text-2xl sm:text-xl lg:text-2xl 2xl:text-4xl font-semibold text-purple-700">Full Stack Developer</h2>
                             <div className="relative w-1/4 h-[1.5px] mx-auto md:mx-0">
                                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/70 to-transparent shadow-[0_0_4px_rgba(192,132,252,0.4)] [clip-path:polygon(0%_0%,100%_40%,100%_60%,0%_100%)]"></span>
                             </div>
-                            <p className="text-gray-600 max-w-md 2xl:max-w-xl mx-auto md:mx-0 text-xs sm:text-sm 2xl:text-xl hero-subtext leading-relaxed">
+                            <p className="text-gray-600 max-w-md 2xl:max-w-xl mx-auto md:mx-0 text-sm sm:text-base 2xl:text-xl hero-subtext leading-relaxed px-6 sm:px-0">
                                 I enjoy turning ideas into complete full-stack applications with smooth user experience and solid backend logic.
                             </p>
                             <div className="flex gap-3 sm:gap-5 justify-center md:justify-start pt-1 sm:pt-4">
@@ -129,7 +129,7 @@ function App() {
                                 </button>
                             </div>
                         </div>
-                        <div className="relative flex justify-center items-center pb-4 sm:pb-0 md:-translate-y-4 hero-image-reveal">
+                        <div className="relative flex justify-center items-center pb-4 sm:pb-0 md:-translate-y-4 hero-image-reveal mt-20 md:mt-0">
                             <div className="hero-orbit-inner flex items-center justify-center">
                                 <div className="hero-avatar hover:scale-105 transition duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-10">
                                     <img src="/images/ChatGPT Image Feb 8, 2026, 11_00_06 PM.png" loading="lazy" className="hero-avatar-img" alt="Hero" />
@@ -364,9 +364,9 @@ function App() {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white/30 dark:via-black/20 dark:to-black/50"></div>
                 </div>
 
-                <div className="relative z-10 max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-6 mt-4 md:mt-6">
+                <div className="relative z-10 w-full max-w-[1600px] 2xl:max-w-[1600px] mx-auto px-6 mt-4 md:mt-6">
                     {/* Fluid Responsive Transparent/Glassy Card */}
-                    <div className="footer-solid-card p-4 sm:p-6 lg:p-8 rounded-[1.25rem] border border-sky-300/20 dark:border-cyan-500/10 shadow-2xl backdrop-blur-[10px] bg-sky-500/[0.02] dark:bg-black/1">
+                    <div className="footer-solid-card w-full p-4 sm:p-6 lg:p-8 rounded-[1.25rem] border border-sky-300/20 dark:border-cyan-500/10 shadow-2xl backdrop-blur-[10px] bg-sky-500/[0.02] dark:bg-black/1">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 text-slate-700 dark:text-slate-200">
 
                             {/* Column 1: Get In Touch */}
@@ -380,8 +380,8 @@ function App() {
                                             <i className='bx bx-envelope text-base'></i>
                                         </div>
                                         <div>
-                                            <p className="text-[9px] font-bold text-sky-700/50 dark:text-cyan-400/50 uppercase tracking-widest mb-0">Email</p>
-                                            <p className="text-[13px] font-semibold transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">satyaaa768@gmail.com</p>
+                                            <p className="text-[10px] font-bold text-sky-900/100 dark:text-cyan-400/100 uppercase tracking-widest mb-0">Email</p>
+                                            <p className="text-[13px] font-semibold text-slate-800 dark:text-slate-100 transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">satyaaa768@gmail.com</p>
                                         </div>
                                     </li>
                                     <li className="flex items-center gap-3.5 group cursor-pointer">
@@ -389,8 +389,8 @@ function App() {
                                             <i className='bx bx-phone text-base'></i>
                                         </div>
                                         <div>
-                                            <p className="text-[9px] font-bold text-sky-700/50 dark:text-cyan-400/50 uppercase tracking-widest mb-0">Phone</p>
-                                            <p className="text-[13px] font-semibold transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">+91 9719650753</p>
+                                            <p className="text-[10px] font-bold text-sky-900/100 dark:text-cyan-400/100 uppercase tracking-widest mb-0">Phone</p>
+                                            <p className="text-[13px] font-semibold text-slate-800 dark:text-slate-100 transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">+91 9719650753</p>
                                         </div>
                                     </li>
                                     <li className="flex items-center gap-3.5 group cursor-pointer">
@@ -398,8 +398,8 @@ function App() {
                                             <i className='bx bx-map text-base'></i>
                                         </div>
                                         <div>
-                                            <p className="text-[9px] font-bold text-sky-700/50 dark:text-cyan-400/50 uppercase tracking-widest mb-0">Location</p>
-                                            <p className="text-[13px] font-semibold transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">New Delhi, India</p>
+                                            <p className="text-[10px] font-bold text-sky-900/100 dark:text-cyan-400/100 uppercase tracking-widest mb-0">Location</p>
+                                            <p className="text-[13px] font-semibold text-slate-800 dark:text-slate-100 transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">New Delhi, India</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -411,10 +411,10 @@ function App() {
                                     Quick Links
                                 </h3>
                                 <ul className="space-y-2.5">
-                                    <li><a href="#home" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Home</a></li>
-                                    <li><a href="#skills" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Skills</a></li>
-                                    <li><a href="#experience" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Experience</a></li>
-                                    <li><a href="#contact" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Contact Us</a></li>
+                                    <li><a href="#home" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Home</a></li>
+                                    <li><a href="#skills" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Skills</a></li>
+                                    <li><a href="#experience" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Experience</a></li>
+                                    <li><a href="#contact" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Contact Us</a></li>
                                 </ul>
                             </div>
 
@@ -424,16 +424,16 @@ function App() {
                                     Follow Us
                                 </h3>
                                 <div className="flex gap-2.5">
-                                    <a href="#" className="social-button github h-10 w-10 flex items-center justify-center transition-all">
+                                    <a href="javascript:void(0)" className="social-button github h-10 w-10 flex items-center justify-center transition-all">
                                         <i className='bx bxl-github text-lg'></i>
                                     </a>
-                                    <a href="#" className="social-button linkedin h-10 w-10 flex items-center justify-center transition-all">
+                                    <a href="javascript:void(0)" className="social-button linkedin h-10 w-10 flex items-center justify-center transition-all">
                                         <i className='bx bxl-linkedin-square text-lg'></i>
                                     </a>
-                                    <a href="#" className="social-button twitter h-10 w-10 flex items-center justify-center transition-all">
+                                    <a href="javascript:void(0)" className="social-button twitter h-10 w-10 flex items-center justify-center transition-all">
                                         <i className='bx bxl-twitter text-lg'></i>
                                     </a>
-                                    <a href="#" className="social-button instagram h-10 w-10 flex items-center justify-center transition-all">
+                                    <a href="javascript:void(0)" className="social-button instagram h-10 w-10 flex items-center justify-center transition-all">
                                         <i className='bx bxl-instagram text-lg'></i>
                                     </a>
                                 </div>
@@ -446,8 +446,8 @@ function App() {
                     </div>
 
                     {/* Bottom Utility Bar */}
-                    <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-800 dark:text-gray-400 text-[11px] font-normal">
-                        <p className="tracking-wide opacity-90">&copy; {new Date().getFullYear()} Satya Prakash. Designed with Passion & Precision.</p>
+                    <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-900 dark:text-gray-100 text-[11px] font-bold">
+                        <p className="tracking-wide">&copy; {new Date().getFullYear()} Satya Prakash. Designed with Passion & Precision.</p>
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                             className="w-8 h-8 rounded-full glass-icon flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all shadow-md active:scale-95 group"

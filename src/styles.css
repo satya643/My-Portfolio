@@ -600,9 +600,12 @@ header,
   }
 
   @media (max-width: 768px) {
-    width: min(160px, 38vw);
-    height: min(160px, 38vw);
+    width: min(240px, 70vw);
+    height: min(240px, 70vw);
   }
+
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
 
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.05);
@@ -654,6 +657,11 @@ header,
     height: 640px;
   }
 
+  @media (max-width: 768px) {
+    width: min(420px, 95vw);
+    height: min(420px, 95vw);
+  }
+
   max-width: 95vw;
   max-height: 95vw;
   background: transparent;
@@ -672,6 +680,11 @@ header,
   @media (min-width: 1280px) {
     width: 460px;
     height: 460px;
+  }
+
+  @media (max-width: 768px) {
+    width: min(280px, 80vw);
+    height: min(280px, 80vw);
   }
 
   background: transparent;
@@ -1042,8 +1055,21 @@ body.dark-mode #experience p {
 .pt-portfolio {
   padding: 1.25rem 1.35rem 1.35rem;
   width: 100%;
-  max-width: 600px;
-  flex: 0 1 auto;
+  max-width: 100%;
+  flex: 1 1 auto;
+
+  @media (min-width: 1024px) {
+    max-width: 650px;
+    flex: 0 1 auto;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 700px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 850px;
+  }
 }
 
 .portfolio-form {
@@ -1379,9 +1405,21 @@ body:not(.dark-mode) .theme-switch .bx-moon {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 380px;
-  flex: 0 0 auto;
-  /* Prevents squashing in horizontal layout */
+  max-width: 100%;
+  flex: 1 1 auto;
+
+  @media (min-width: 1024px) {
+    max-width: 280px;
+    flex: 0 1 auto;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 300px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 350px;
+  }
 }
 
 .pt-avatar-wrap {
