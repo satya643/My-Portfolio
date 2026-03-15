@@ -351,16 +351,17 @@ function App() {
             </section>
 
             {/* Footer Section */}
-            <footer className="relative w-full py-6 md:py-10 overflow-hidden mt-6">
-                {/* Full-bleed Background Image with Premium Polish */}
-                <div className="absolute inset-0 z-0">
+            <footer className="relative w-full py-10 sm:py-16 md:py-20 lg:py-24 overflow-hidden mt-6 flex flex-col items-center justify-center min-h-[400px] md:min-h-[500px]">
+                {/* Full-bleed Background Image with Responsive Scaling */}
+                <div className="absolute inset-0 z-0 w-full h-full">
                     <img
                         src={isDark ? "/images/image.png" : "/images/image copy.png"}
-                        className={`w-full h-full object-cover transition-all duration-1000 ${isDark ? 'brightness-50 contrast-125' : 'brightness-110 contrast-100'}`}
+                        className={`w-full h-full object-cover sm:object-fill lg:object-cover transition-all duration-1000 ${isDark ? 'brightness-50 contrast-125' : 'brightness-110 contrast-100'}`}
+                        style={{ objectPosition: 'center 20%' }}
                         alt="Footer Background"
                     />
                     {/* Vignette Overlay for Depth */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/20 dark:via-black/10 dark:to-black/30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white/30 dark:via-black/20 dark:to-black/50"></div>
                 </div>
 
                 <div className="relative z-10 max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-6 mt-4 md:mt-6">
