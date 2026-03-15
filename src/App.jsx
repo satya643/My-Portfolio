@@ -48,7 +48,7 @@ function App() {
                     </div>
                     <nav className="hidden md:flex gap-5 xl:gap-8 2xl:gap-8 text-gray-700 font-medium cursor-pointer text-sm xl:text-base 2xl:text-lg">
                         <a className="hover:text-purple-600 transition" href="#home">Home</a>
-                        <a className="hover:text-purple-600 transition" href="#about">About</a>
+                        {/* <a className="hover:text-purple-600 transition" href="#about">About</a> */}
                         <a className="hover:text-purple-600 transition" href="#skills">Skills</a>
                         <a className="hover:text-purple-600 transition" href="#experience">Experience</a>
                         {/* <a className="hover:text-purple-600 transition" href="#work">Work</a>
@@ -66,37 +66,15 @@ function App() {
                             <i className="bx bx-sun theme-switch-icon sun"></i>
                             <i className="bx bx-moon theme-switch-icon moon"></i>
                         </div>
-                        <div className="download-wrapper">
-                            <button className="botao">
-                                <svg
-                                    className="mysvg"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    height="24px"
-                                    width="24px"
-                                >
-                                    <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
-                                    <g
-                                        strokeLinejoin="round"
-                                        strokeLinecap="round"
-                                        id="SVGRepo_tracerCarrier"
-                                    ></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <g id="Interface / Download">
-                                            <path
-                                                strokeLinejoin="round"
-                                                strokeLinecap="round"
-                                                strokeWidth="2"
-                                                stroke="#f1f1f1"
-                                                d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
-                                                id="Vector"
-                                            ></path>
-                                        </g>
-                                    </g>
-                                </svg>
-                                <span className="texto">Download</span>
-                            </button>
+                        <div className="download-wrapper flex items-center justify-center">
+                            <a href="/Satya_Prakash_Resume.pdf" download="Satya_Prakash_Resume.pdf" className="cssbuttons-io-button shadow-lg">
+                                <span>Resume</span>
+                                <div className="icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
                         <button
                             id="menu-toggle"
@@ -252,10 +230,10 @@ function App() {
                                         <p className="text-sm sm:text-base lg:text-lg font-bold text-purple-600 dark:text-purple-400 mb-3 tracking-widest uppercase">
                                             Jan 2026 – Present
                                         </p>
-                                        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-black text-purple-600 dark:text-purple-700 mb-3 tracking-tight">
+                                        <h3 className="text-xl sm:text-2xl lg:text-4xl font-black text-purple-600 dark:text-purple-700 mb-3 tracking-tight">
                                             WayOne IT Solutions
                                         </h3>
-                                        <p className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium italic max-w-md lg:ml-auto">
+                                        <p className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium italic">
                                             Ramesh Nagar, New Delhi, Above ICICI, 3rd Floor
                                         </p>
                                     </div>
@@ -273,10 +251,10 @@ function App() {
                                         <p className="text-sm sm:text-base lg:text-lg font-bold text-purple-600 dark:text-purple-400 mb-3 tracking-widest uppercase">
                                             July 2025 – Dec 2025
                                         </p>
-                                        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-black text-purple-600 dark:text-purple-700 mb-3 tracking-tight">
+                                        <h3 className="text-xl sm:text-2xl lg:text-4xl font-black text-purple-600 dark:text-purple-700 mb-3 tracking-tight">
                                             WTF Gyms
                                         </h3>
-                                        <p className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium italic max-w-md">
+                                        <p className="text-sm sm:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium italic">
                                             Sector 9, AMCO Tower, 3rd Floor, Noida
                                         </p>
                                     </div>
@@ -290,7 +268,7 @@ function App() {
                 </div>
             </section>
 
-            <section id="work" className="relative w-full py-20 2xl:py-40 bg-transparent">
+            {/* <section id="work" className="relative w-full py-20 2xl:py-40 bg-transparent">
                 <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 text-center">
                     <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-purple-800 mb-12 2xl:mb-20">Latest Work</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -311,7 +289,7 @@ function App() {
                         </article>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section id="contact" className="relative w-full py-20 2xl:py-40 bg-transparent">
                 <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6">
@@ -326,38 +304,38 @@ function App() {
                                 <label htmlFor="portfolio-subject">Subject</label>
                                 <input id="portfolio-subject" type="text" placeholder="Subject" />
                                 <label htmlFor="portfolio-message">Message</label>
-                                <textarea id="portfolio-message" rows="4" placeholder="Message"></textarea>
+                                <textarea id="portfolio-message" rows="5" placeholder="Message"></textarea>
                                 <button type="submit" className="pt-submit">Send Message</button>
                             </form>
                         </article>
-                        <div className="testimonials-column">
+                        {/* <div className="testimonials-column">
                             <h2 className="pt-title">Connect</h2>
                             <article className="pt-card pt-connect bg-transparent">
                                 <h3>Let's Work Together!</h3>
                                 <p>I'll get back to you within 24 hours.</p>
                                 <div className="pt-socials">
-                                    <button type="button" aria-label="Instagram" className="social-button">
+                                    <button type="button" aria-label="Instagram" className="social-button instagram">
                                         <i className='bx bxl-instagram'></i>
                                     </button>
-                                    <button type="button" aria-label="Twitter" className="social-button">
+                                    <button type="button" aria-label="Twitter" className="social-button twitter">
                                         <i className='bx bxl-twitter'></i>
                                     </button>
-                                    <button type="button" aria-label="WhatsApp" className="social-button">
+                                    <button type="button" aria-label="WhatsApp" className="social-button whatsapp">
                                         <i className='bx bxl-whatsapp'></i>
                                     </button>
-                                    <button type="button" aria-label="YouTube" className="social-button">
+                                    <button type="button" aria-label="YouTube" className="social-button youtube">
                                         <i className='bx bxl-youtube'></i>
                                     </button>
-                                    <button type="button" aria-label="GitHub" className="social-button">
+                                    <button type="button" aria-label="GitHub" className="social-button github">
                                         <i className='bx bxl-github'></i>
                                     </button>
                                 </div>
                                 <div className="pt-contact-lines">
-                                    <p><i className='bx bxs-phone'></i> +123-456-7890</p>
-                                    <p><i className='bx bxs-envelope'></i> contact@email.com</p>
+                                    <p><i className='bx bxs-phone'></i>9719650753</p>
+                                    <p><i className='bx bxs-envelope'></i>satyaaa768@gmail.com</p>
                                 </div>
                             </article>
-                        </div>
+                        </div> */}
                         <article className="pt-card pt-thankyou bg-transparent">
                             <div className="pt-avatar-wrap bg-transparent">
                                 <img src="/images/ChatGPT Image Feb 8, 2026, 11_00_06 PM.png" alt="Avatar" loading="lazy" />
@@ -371,6 +349,114 @@ function App() {
                     </div>
                 </div>
             </section>
+
+            {/* Footer Section */}
+            <footer className="relative w-full py-6 md:py-10 overflow-hidden mt-6">
+                {/* Full-bleed Background Image with Premium Polish */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src={isDark ? "/images/image.png" : "/images/image copy.png"}
+                        className={`w-full h-full object-cover transition-all duration-1000 ${isDark ? 'brightness-50 contrast-125' : 'brightness-110 contrast-100'}`}
+                        alt="Footer Background"
+                    />
+                    {/* Vignette Overlay for Depth */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/20 dark:via-black/10 dark:to-black/30"></div>
+                </div>
+
+                <div className="relative z-10 max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-6 mt-4 md:mt-6">
+                    {/* Fluid Responsive Transparent/Glassy Card */}
+                    <div className="footer-solid-card p-4 sm:p-6 lg:p-8 rounded-[1.25rem] border border-sky-300/20 dark:border-cyan-500/10 shadow-2xl backdrop-blur-[10px] bg-sky-500/[0.02] dark:bg-black/1">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 text-slate-700 dark:text-slate-200">
+
+                            {/* Column 1: Get In Touch */}
+                            <div className="flex flex-col gap-4">
+                                <h3 className="text-lg font-bold text-sky-800 dark:text-cyan-500 border-b-2 border-sky-400/20 dark:border-cyan-500/15 pb-1.5 inline-block self-start tracking-tight">
+                                    Get In Touch
+                                </h3>
+                                <ul className="space-y-3">
+                                    <li className="flex items-center gap-3.5 group cursor-pointer">
+                                        <div className="w-8 h-8 rounded-lg bg-sky-200/40 dark:bg-cyan-500/10 flex items-center justify-center text-sky-800 dark:text-cyan-400 group-hover:bg-sky-600 dark:group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-sm border border-sky-300/20 dark:border-cyan-500/15">
+                                            <i className='bx bx-envelope text-base'></i>
+                                        </div>
+                                        <div>
+                                            <p className="text-[9px] font-bold text-sky-700/50 dark:text-cyan-400/50 uppercase tracking-widest mb-0">Email</p>
+                                            <p className="text-[13px] font-semibold transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">satyaaa768@gmail.com</p>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-center gap-3.5 group cursor-pointer">
+                                        <div className="w-8 h-8 rounded-lg bg-sky-200/40 dark:bg-cyan-500/10 flex items-center justify-center text-sky-800 dark:text-cyan-400 group-hover:bg-sky-600 dark:group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-sm border border-sky-300/20 dark:border-cyan-500/15">
+                                            <i className='bx bx-phone text-base'></i>
+                                        </div>
+                                        <div>
+                                            <p className="text-[9px] font-bold text-sky-700/50 dark:text-cyan-400/50 uppercase tracking-widest mb-0">Phone</p>
+                                            <p className="text-[13px] font-semibold transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">+91 9719650753</p>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-center gap-3.5 group cursor-pointer">
+                                        <div className="w-8 h-8 rounded-lg bg-sky-200/40 dark:bg-cyan-500/10 flex items-center justify-center text-sky-800 dark:text-cyan-400 group-hover:bg-sky-600 dark:group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-sm border border-sky-300/20 dark:border-cyan-500/15">
+                                            <i className='bx bx-map text-base'></i>
+                                        </div>
+                                        <div>
+                                            <p className="text-[9px] font-bold text-sky-700/50 dark:text-cyan-400/50 uppercase tracking-widest mb-0">Location</p>
+                                            <p className="text-[13px] font-semibold transition-colors group-hover:text-sky-700 dark:group-hover:text-cyan-400">New Delhi, India</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Column 2: Quick Links */}
+                            <div className="flex flex-col gap-4 sm:pl-8 lg:pl-10 sm:border-l border-sky-200/50 dark:border-white/5">
+                                <h3 className="text-lg font-bold text-sky-800  dark:text-cyan-500  border-b-2 border-sky-400/20 dark:border-cyan-500/15 pb-1.5 inline-block self-start tracking-tight">
+                                    Quick Links
+                                </h3>
+                                <ul className="space-y-2.5">
+                                    <li><a href="#home" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Home</a></li>
+                                    <li><a href="#skills" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Skills</a></li>
+                                    <li><a href="#experience" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Experience</a></li>
+                                    <li><a href="#contact" className="flex items-center gap-2.5 text-[13px] hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Contact Us</a></li>
+                                </ul>
+                            </div>
+
+                            {/* Column 3: Follow Us */}
+                            <div className="flex flex-col gap-4 lg:pl-10 lg:border-l border-sky-200/50 dark:border-white/5 sm:col-span-2 lg:col-span-1 sm:pt-6 lg:pt-0 sm:border-t lg:border-t-0 sm:mt-2 lg:mt-0">
+                                <h3 className="text-lg font-bold text-sky-800  dark:text-cyan-500  border-b-2 border-sky-400/20 dark:border-cyan-500/15 pb-1.5 inline-block self-start tracking-tight">
+                                    Follow Us
+                                </h3>
+                                <div className="flex gap-2.5">
+                                    <a href="#" className="social-button github h-10 w-10 flex items-center justify-center transition-all">
+                                        <i className='bx bxl-github text-lg'></i>
+                                    </a>
+                                    <a href="#" className="social-button linkedin h-10 w-10 flex items-center justify-center transition-all">
+                                        <i className='bx bxl-linkedin-square text-lg'></i>
+                                    </a>
+                                    <a href="#" className="social-button twitter h-10 w-10 flex items-center justify-center transition-all">
+                                        <i className='bx bxl-twitter text-lg'></i>
+                                    </a>
+                                    <a href="#" className="social-button instagram h-10 w-10 flex items-center justify-center transition-all">
+                                        <i className='bx bxl-instagram text-lg'></i>
+                                    </a>
+                                </div>
+                                {/* <div className="mt-auto">
+                                    <p className="text-[11px] italic opacity-60 leading-relaxed font-normal">Crafting digital excellence in New Delhi, India.</p>
+                                </div> */}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {/* Bottom Utility Bar */}
+                    <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-800 dark:text-gray-400 text-[11px] font-normal">
+                        <p className="tracking-wide opacity-90">&copy; {new Date().getFullYear()} Satya Prakash. Designed with Passion & Precision.</p>
+                        <button
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                            className="w-8 h-8 rounded-full glass-icon flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all shadow-md active:scale-95 group"
+                            aria-label="Back to top"
+                        >
+                            <i className='bx bx-up-arrow-alt text-base group-hover:animate-bounce-short'></i>
+                        </button>
+                    </div>
+                </div>
+            </footer>
         </>
     );
 }
