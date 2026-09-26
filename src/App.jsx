@@ -51,6 +51,7 @@ function App() {
                         {/* <a className="hover:text-purple-600 transition" href="#about">About</a> */}
                         <a className="hover:text-purple-600 transition" href="#skills">Skills</a>
                         <a className="hover:text-purple-600 transition" href="#experience">Experience</a>
+                        <a className="hover:text-purple-600 transition" href="#hobbies">Hobbies</a>
                         {/* <a className="hover:text-purple-600 transition" href="#work">Work</a>
                          */}
                         <a className="hover:text-purple-600 transition" href="#contact">Contact Us</a>
@@ -91,7 +92,7 @@ function App() {
                         >
                             <i className='bx bx-x'></i>
                         </button>
-                        {['Home', 'About', 'Skills', 'Experience', 'Contact'].map((item) => (
+                        {['Home', 'About', 'Skills', 'Experience', 'Hobbies', 'Contact'].map((item) => (
                             <a
                                 key={item}
                                 onClick={() => setIsMenuOpen(false)}
@@ -132,7 +133,7 @@ function App() {
                         <div className="relative flex justify-center items-center pb-4 sm:pb-0 md:-translate-y-4 hero-image-reveal mt-20 md:mt-0">
                             <div className="hero-orbit-inner flex items-center justify-center">
                                 <div className="hero-avatar hover:scale-105 transition duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-10">
-                                    <img src="/images/ChatGPT Image Feb 8, 2026, 11_00_06 PM.png" loading="lazy" className="hero-avatar-img" alt="Hero" />
+                                    <img src="/images/satya.jpg" loading="lazy" className="hero-avatar-img hero-avatar-photo" alt="Satya Prakash" />
                                 </div>
                             </div>
                         </div>
@@ -262,6 +263,37 @@ function App() {
                                     {/* Timeline Dot */}
                                     <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-purple-600 border-4 border-white dark:border-gray-950 shadow-[0_0_20px_rgba(124,58,237,0.5)] z-10 group-hover:scale-125 transition-transform" />
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hobbies" className="relative w-full py-16 sm:py-24 2xl:py-40 bg-transparent overflow-hidden">
+                <div className="max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-6 relative">
+                    {/* Vertical Label */}
+                    <div className="skills-vertical-label hidden lg:flex">
+                        <span>HOBBIES</span>
+                    </div>
+
+                    <div className="lg:pl-24 w-full">
+                        <div className="reveal w-full">
+                            <h3 className="skills-category-title text-center 2xl:text-left">Beyond the Code</h3>
+                            <div className="hobbies-grid mt-6">
+                                {[
+                                    { name: 'Gaming', image: '/images/hobbies/gaming.jpg', text: 'Strategy, quick reflexes and a bit of friendly competition.' },
+                                    { name: 'Music', image: '/images/hobbies/music.jpg', text: 'A good playlist keeps the ideas and the code flowing.' },
+                                    { name: 'Photography', image: '/images/hobbies/photography.jpg', text: 'Finding the right frame in everyday moments.' },
+                                    { name: 'Trekking', image: '/images/hobbies/trekking.jpg', text: 'Trails, fresh air and a clear head.' }
+                                ].map((hobby) => (
+                                    <article key={hobby.name} className="hobby-card group">
+                                        <img src={hobby.image} alt={hobby.name} loading="lazy" />
+                                        <div className="hobby-card-body">
+                                            <h4 className="hobby-card-title">{hobby.name}</h4>
+                                            <p className="hobby-card-text">{hobby.text}</p>
+                                        </div>
+                                    </article>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -414,6 +446,7 @@ function App() {
                                     <li><a href="#home" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Home</a></li>
                                     <li><a href="#skills" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Skills</a></li>
                                     <li><a href="#experience" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Experience</a></li>
+                                    <li><a href="#hobbies" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Hobbies</a></li>
                                     <li><a href="#contact" className="flex items-center gap-2.5 text-[13px] text-slate-800 dark:text-slate-100 hover:text-sky-700 dark:hover:text-cyan-400 transition-all hover:translate-x-1.5 font-semibold tracking-wide"><span className="w-1 h-1 rounded-full bg-sky-600 dark:bg-cyan-500 shadow-sm"></span> Contact Me</a></li>
                                 </ul>
                             </div>
