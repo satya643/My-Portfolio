@@ -505,6 +505,7 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .x-logo{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;flex:none;font:400 17px/1 var(--f-display);color:#fff;background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:0 14px 26px -12px var(--c2),inset 0 1px 0 rgba(255,255,255,.3)}
 .x-logo svg{width:26px;height:26px}
 .co-logo.has-img,.x-logo.has-img{width:108px;padding:8px 10px;background:#fff;box-shadow:0 12px 24px -14px rgba(15,20,51,.55),inset 0 0 0 1px rgba(15,20,51,.08)}
+.co-logo.has-img,.x-logo.has-img,.org-mark.has-img{display:flex;align-items:center;justify-content:center;overflow:hidden}
 .has-img img{width:100%;height:100%;object-fit:contain}
 .x-head h3{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,2.6vw,36px);line-height:1.05;margin:0}
 .x-role{margin:4px 0 0;color:var(--accent-2);font-weight:600;font-size:14.5px}
@@ -581,6 +582,9 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .org-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .org-mark{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;font:400 19px/1 var(--f-display);color:#fff;background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:0 14px 26px -12px var(--c2),inset 0 1px 0 rgba(255,255,255,.3)}
 .org-mark svg{width:28px;height:28px}
+.org-mark.has-img,.x-logo.has-img.sq{padding:5px;background:#fff;box-shadow:0 12px 24px -14px rgba(15,20,51,.55),inset 0 0 0 1px rgba(15,20,51,.08)}
+.x-logo.has-img.sq{width:56px}
+.org-mark.has-img.wide{width:112px;padding:8px 10px}
 .org-name{display:block;font-family:var(--f-display);font-weight:400;font-size:24px;line-height:1.12}
 .org-sub{display:block;margin-top:6px;color:var(--dim);font-size:14px}
 .org-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
@@ -1133,7 +1137,7 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
         <div class="stop left">
           <article class="stop-card xcard pcard tilt">
             <header class="x-head">
-              <span class="x-logo" style="--c1:#C8A15A;--c2:#8A6528"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+              <span class="x-logo has-img sq"><img src="/images/site/akgec-logo.png" alt="AKGEC" width="240" height="240"></span>
               <div><h3>AKGEC, Ghaziabad</h3><p class="x-role">B.Tech, Data Science</p></div>
             </header>
             <div class="x-meta"><span class="x-date">2020 – 2024</span><span class="pill">Education</span></div>
@@ -1253,19 +1257,19 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
       <div class="org-grid" data-reveal="stagger">
         <button class="org tilt" type="button" aria-pressed="false">
           <span class="org-inner">
-            <span class="org-face pcard"><span class="org-top"><span class="org-mark" style="--c1:#3B3FD8;--c2:#8B6CF6">WO</span><span class="pill now"><i class="pulse"></i>Current</span></span><span><span class="org-name">WayOne IT Solutions</span><span class="org-sub">Full Stack (Python) Developer</span></span><span class="org-foot"><span>Employer · 2026</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span></span>
+            <span class="org-face pcard"><span class="org-top"><span class="org-mark has-img wide"><img src="/images/site/wayone-logo.png" alt="WayOne IT Solutions" width="480" height="178"></span><span class="pill now"><i class="pulse"></i>Current</span></span><span><span class="org-name">WayOne IT Solutions</span><span class="org-sub">Full Stack (Python) Developer</span></span><span class="org-foot"><span>Employer · 2026</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span></span>
             <span class="org-face org-back"><span class="b-date">Jan 2026 – Present</span><span><span class="org-name">WayOne IT Solutions</span></span><span class="b-text">IT services company in Ramesh Nagar, New Delhi, where I build full stack features with Python and JavaScript.</span><span class="b-tags"><span>Python</span><span>Next.js</span><span>React</span><span>MongoDB</span></span></span>
           </span>
         </button>
         <button class="org tilt" type="button" aria-pressed="false">
           <span class="org-inner">
-            <span class="org-face pcard"><span class="org-top"><span class="org-mark" style="--c1:#1A1A1A;--c2:#D9342B">WTF</span><span class="pill">2025</span></span><span><span class="org-name">WTF Gyms</span><span class="org-sub">MERN Full Stack Developer</span></span><span class="org-foot"><span>Employer · Noida</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span></span>
+            <span class="org-face pcard"><span class="org-top"><span class="org-mark has-img wide"><img src="/images/site/wtf-logo.png" alt="WTF Gyms" width="480" height="303"></span><span class="pill">2025</span></span><span><span class="org-name">WTF Gyms</span><span class="org-sub">MERN Full Stack Developer</span></span><span class="org-foot"><span>Employer · Noida</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span></span>
             <span class="org-face org-back"><span class="b-date">Jul 2025 – Dec 2025</span><span><span class="org-name">WTF Gyms</span></span><span class="b-text">Gym chain with its office at AMCO Tower, Sector 9, Noida. I built REST APIs, MongoDB models and React screens.</span><span class="b-tags"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></span></span>
           </span>
         </button>
         <button class="org tilt" type="button" aria-pressed="false">
           <span class="org-inner">
-            <span class="org-face pcard"><span class="org-top"><span class="org-mark" style="--c1:#C8A15A;--c2:#8A6528"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span class="pill">2020 – 2024</span></span><span><span class="org-name">Ajay Kumar Garg Engineering College</span><span class="org-sub">Ghaziabad (AKGEC)</span></span><span class="org-foot"><span>Education</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span></span>
+            <span class="org-face pcard"><span class="org-top"><span class="org-mark has-img"><img src="/images/site/akgec-logo.png" alt="AKGEC" width="240" height="240"></span><span class="pill">2020 – 2024</span></span><span><span class="org-name">Ajay Kumar Garg Engineering College</span><span class="org-sub">Ghaziabad (AKGEC)</span></span><span class="org-foot"><span>Education</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span></span>
             <span class="org-face org-back"><span class="b-date">2020 – 2024</span><span><span class="org-name">B.Tech, Data Science</span></span><span class="b-text">Ajay Kumar Garg Engineering College, Ghaziabad (AKGEC).</span><span class="b-tags"><span>Data Science</span><span>B.Tech</span></span></span>
           </span>
         </button>
