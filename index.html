@@ -536,7 +536,7 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .browser-bar i:nth-child(2){background:#F5BF4F}
 .browser-bar i:nth-child(3){background:#5BC46A}
 .browser-bar span{margin-left:8px;flex:1;min-width:0;height:22px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font:500 11px/20px var(--f-mono);color:var(--faint);padding:0 12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.browser img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.browser img{width:100%;height:auto}
 .proj-info{display:grid;gap:14px;padding:clamp(4px,1vw,14px) clamp(4px,1.4vw,20px) clamp(10px,1vw,14px) 0}
 .proj-info .mono{color:var(--label)}
 .proj-info h3{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.4vw,50px);line-height:1.02}
@@ -549,7 +549,7 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .static .proj-dots,.static .proj-count{display:none}
 .motion .projects{padding-block:0}
 .motion .proj-pin{height:100vh;height:100svh;display:flex;flex-direction:column;overflow:clip;padding-top:calc(clamp(86px,13vh,130px) + env(safe-area-inset-top,0px));padding-bottom:clamp(20px,4vh,40px)}
-.motion .proj-stage{flex:1;min-height:0;margin-top:clamp(14px,3vh,34px);display:grid;place-items:center;perspective:1400px}
+.motion .proj-stage{flex:1;min-height:0;margin-top:clamp(14px,3vh,34px);display:grid;place-items:center;align-content:center;perspective:1400px}
 .motion .proj-deck{display:grid;place-items:center;width:100%;transform-style:preserve-3d;transform:scale(var(--fit,1))}
 .motion .proj-card{grid-area:1/1;width:min(1060px,100%);transform-style:preserve-3d;will-change:transform,opacity}
 @media (max-width:820px){
@@ -602,15 +602,14 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .hb-orb{position:absolute;left:var(--ox);top:var(--oy);width:var(--or);aspect-ratio:1;border-radius:50%;background:var(--orb);box-shadow:0 0 90px 24px var(--orb-glow);translate:-50% -50%}
 .hb-ridge{position:absolute;left:-12%;width:124%;bottom:0;height:100%}
 .hb-ridge svg{position:absolute;inset:0;width:100%;height:100%}
-.hb-inner{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(20px,4vw,60px);padding:calc(clamp(90px,14vh,130px) + env(safe-area-inset-top,0px)) var(--edge-x) clamp(80px,18vh,200px)}
+.hb-inner{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:clamp(20px,4vw,60px);padding:calc(clamp(90px,14vh,130px) + env(safe-area-inset-top,0px)) var(--edge-x) clamp(80px,18vh,200px)}
 .hb-content{position:relative;isolation:isolate;display:grid;gap:14px;max-width:640px}
 .hb-content::before{content:"";position:absolute;inset:-50px -70px;z-index:-1;background:radial-gradient(closest-side,var(--hb-glow),transparent);pointer-events:none}
 .hb-kicker{display:flex;align-items:center;gap:12px;margin:0;color:var(--label)}
 .hb-title{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(52px,8vw,140px);line-height:.92;letter-spacing:-.02em;color:var(--ink);text-shadow:var(--hb-shadow)}
 .hb-text{margin:0;font-size:clamp(16px,1.3vw,20px);color:var(--ink-2);max-width:36ch}
-.hb-card{position:relative;margin:0;justify-self:center;width:clamp(160px,18vw,270px);aspect-ratio:1;border-radius:28px;padding:8px;border:1px solid transparent;background:var(--card-fill) padding-box,var(--edge) border-box;box-shadow:var(--shadow-lg);animation:bob 6s ease-in-out infinite}
-.hb-card img{width:100%;height:100%;object-fit:cover;border-radius:21px}
-.hb-card figcaption{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;font:500 10px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.hb-emblem{position:absolute;z-index:1;right:var(--edge-x);top:calc(clamp(96px,16vh,150px) + env(safe-area-inset-top,0px));width:clamp(96px,11vw,150px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--glass);border:1px solid var(--glass-bd);box-shadow:var(--shadow);animation:bob 6s ease-in-out infinite}
+.hb-emblem img{width:100%;height:100%;object-fit:cover}
 [data-scene="dawn"]{--s1:rgba(242,220,190,.35);--s2:rgba(244,214,190,.75);--s3:#F3D6B6;--orb:radial-gradient(circle,#FFFBF0,#F6DDA6 55%,#E2B870);--orb-glow:rgba(242,214,160,.6);--ox:62%;--oy:40%;--or:clamp(120px,15vw,220px);--hr0:#D2C8F6;--hr1:#8F85E4;--hr2:#343A9E}
 [data-scene="night"]{--s1:rgba(200,190,250,.35);--s2:rgba(176,164,242,.7);--s3:#B3A6F2;--orb:radial-gradient(circle at 38% 38%,#FFFFFF,#EEE9FF 60%,#CFC4F7);--orb-glow:rgba(220,212,255,.6);--ox:22%;--oy:26%;--or:clamp(80px,9vw,130px);--hr0:#A69CEC;--hr1:#5B55C8;--hr2:#1F2570}
 [data-scene="neon"]{--s1:rgba(190,170,250,.3);--s2:rgba(186,160,250,.7);--s3:#CDB9FA;--orb:radial-gradient(circle,#FFF0FA,#E4B8F4 55%,#9C7AF0);--orb-glow:rgba(210,170,250,.55);--ox:48%;--oy:46%;--or:clamp(130px,16vw,240px);--hr0:#B9A2F6;--hr1:#6A52D8;--hr2:#2A2277}
@@ -624,10 +623,7 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .motion .hb-panel{width:100vw;height:100%;min-height:0;flex:none}
 @media (max-width:860px){
   .hb-intro-grid{grid-template-columns:1fr}
-  .hb-inner{grid-template-columns:1fr;grid-template-rows:auto 1fr;align-items:end;justify-items:start;padding-bottom:clamp(30px,6vh,60px)}
-  .hb-card{grid-row:1;justify-self:end;width:clamp(116px,30vw,170px);border-radius:22px;padding:6px}
-  .hb-card img{border-radius:16px}
-  .hb-card figcaption{display:none}
+  .hb-inner{grid-template-columns:1fr;align-items:end;justify-items:start;padding-bottom:clamp(30px,6vh,60px)}
   .hb-content{padding:18px 20px 20px;border-radius:24px;background:var(--panel-glass);border:1px solid var(--glass-bd);box-shadow:var(--shadow)}
   .hb-content::before{display:none}
 }
@@ -1297,30 +1293,30 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
         </div>
         <article class="hb-panel" data-scene="dawn" data-seed="3">
           <div class="hb-sky"></div><div class="hb-orb" data-depth=".25"></div><div class="hb-ridges"></div>
+          <div class="hb-emblem" data-depth="-.4" aria-hidden="true"><img src="/images/site/trekking.jpg" alt="" width="640" height="640"></div>
           <div class="hb-inner">
             <div class="hb-content"><p class="hb-kicker mono">Hobby 01 / 04</p><h3 class="hb-title" data-hsplit>Trekking</h3><p class="hb-text">Early starts, long trails and the view from the top.</p></div>
-            <figure class="hb-card tilt" data-depth="-.2"><img src="/images/site/trekking.jpg" alt="Line drawing of mountain peaks" width="640" height="640"><figcaption>Trekking</figcaption></figure>
           </div>
         </article>
         <article class="hb-panel" data-scene="night" data-seed="11">
           <div class="hb-sky"></div><div class="hb-orb" data-depth=".25"></div><div class="hb-ridges"></div>
+          <div class="hb-emblem" data-depth="-.4" aria-hidden="true"><img src="/images/site/music.jpg" alt="" width="640" height="640"></div>
           <div class="hb-inner">
             <div class="hb-content"><p class="hb-kicker mono">Hobby 02 / 04</p><h3 class="hb-title" data-hsplit>Music</h3><p class="hb-text">Playlists for every mood, and one just for deep work.</p></div>
-            <figure class="hb-card tilt" data-depth="-.2"><img src="/images/site/music.jpg" alt="Line drawing of headphones" width="640" height="640"><figcaption>Music</figcaption></figure>
           </div>
         </article>
         <article class="hb-panel" data-scene="neon" data-seed="21">
           <div class="hb-sky"></div><div class="hb-orb" data-depth=".25"></div><div class="hb-ridges"></div>
+          <div class="hb-emblem" data-depth="-.4" aria-hidden="true"><img src="/images/site/gaming.jpg" alt="" width="640" height="640"></div>
           <div class="hb-inner">
             <div class="hb-content"><p class="hb-kicker mono">Hobby 03 / 04</p><h3 class="hb-title" data-hsplit>Gaming</h3><p class="hb-text">Story-driven games and the odd late-night match with friends.</p></div>
-            <figure class="hb-card tilt" data-depth="-.2"><img src="/images/site/gaming.jpg" alt="Line drawing of a game controller" width="640" height="640"><figcaption>Gaming</figcaption></figure>
           </div>
         </article>
         <article class="hb-panel" data-scene="gold" data-seed="33">
           <div class="hb-sky"></div><div class="hb-orb" data-depth=".25"></div><div class="hb-ridges"></div>
+          <div class="hb-emblem" data-depth="-.4" aria-hidden="true"><img src="/images/site/photography.jpg" alt="" width="640" height="640"></div>
           <div class="hb-inner">
             <div class="hb-content"><p class="hb-kicker mono">Hobby 04 / 04</p><h3 class="hb-title" data-hsplit>Photography</h3><p class="hb-text">Chasing golden hour, one street at a time.</p></div>
-            <figure class="hb-card tilt" data-depth="-.2"><img src="/images/site/photography.jpg" alt="Line drawing of a camera" width="640" height="640"><figcaption>Photography</figcaption></figure>
           </div>
         </article>
       </div>
