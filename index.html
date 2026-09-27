@@ -575,6 +575,15 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
   .proj-info{padding:0 8px 10px}
   .motion .proj-info p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 }
+@media (max-width:600px){
+  .projects .h2{font-size:clamp(32px,9.4vw,42px)}
+  .proj-cover{aspect-ratio:2/1;padding:14px;gap:8px}
+  .proj-cover b{display:none}
+  .pc-ico{width:52px}
+  .proj-info{gap:10px}
+  .proj-info h3{font-size:26px}
+}
+@media (max-width:600px) and (max-height:760px){.proj-card .tags{display:none}}
 
 /* ---------- organizations ---------- */
 .org-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
@@ -704,6 +713,13 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .c-value{display:block;margin-top:6px;font-weight:600;overflow-wrap:anywhere}
 .copy-btn{height:36px;padding:0 14px;border-radius:11px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:500 12px/1 var(--f-body);cursor:pointer;transition:background .3s,border-color .3s}
 .copy-btn:hover{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+@media (max-width:480px){
+  .c-item{position:relative;grid-template-columns:40px minmax(0,1fr);gap:12px}
+  .c-icon{width:40px;height:40px}
+  .c-item .c-label{min-height:28px;display:flex;align-items:center}
+  .c-item .copy-btn{position:absolute;top:12px;right:10px;height:28px;padding:0 10px;font-size:11px}
+  .c-value{font-size:16px}
+}
 .socials{display:flex;flex-wrap:wrap;gap:10px}
 .soc{position:relative;isolation:isolate;overflow:hidden;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--sheet);border:1px solid var(--line);color:var(--ink);box-shadow:var(--chip-shadow);cursor:pointer;transition:color .3s,border-color .3s,box-shadow .35s,translate .35s var(--ease),scale .12s}
 .soc::before{content:"";position:absolute;left:50%;top:50%;z-index:-1;width:calc(100% + 6px);height:calc(100% + 6px);border-radius:50%;background:var(--sheet);translate:-50% -50%;transition:width .4s var(--ease),height .4s var(--ease)}
