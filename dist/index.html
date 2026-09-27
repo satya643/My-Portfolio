@@ -339,6 +339,13 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .tile{grid-column:span 4;padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:224px}
 .tile.w7{grid-column:span 7}
 .tile.w5{grid-column:span 5}
+.tile.w12{grid-column:1/-1;min-height:0}
+.live-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.live-stat{display:grid;gap:8px;padding:16px 18px;border-radius:18px;background:var(--fact-bg);border:1px solid var(--line)}
+.live-stat .tile-sub{margin:0}
+.live-stat .tile-value.bump{animation:statBump .7s var(--ease)}
+@keyframes statBump{35%{transform:scale(1.1);color:var(--accent)}}
+@media (max-width:600px){.live-stats{grid-template-columns:1fr}}
 .tile-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .tile-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:var(--icon-fg);background:var(--icon-bg);border:1px solid var(--icon-bd)}
 .tile-icon svg{width:20px;height:20px}
@@ -698,11 +705,13 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
 .copy-btn{height:36px;padding:0 14px;border-radius:11px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:500 12px/1 var(--f-body);cursor:pointer;transition:background .3s,border-color .3s}
 .copy-btn:hover{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 .socials{display:flex;flex-wrap:wrap;gap:10px}
-.soc{--b:var(--brand);width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);color:var(--ink);box-shadow:var(--chip-shadow);cursor:pointer;transition:color .3s,border-color .3s,box-shadow .35s,translate .35s var(--ease)}
-[data-look="dark"] .soc{--b:var(--brand-d,var(--brand))}
-.soc svg{width:20px;height:20px;fill:currentColor;transition:fill .3s}
-.soc:hover,.soc:focus-visible{color:var(--b);border-color:color-mix(in srgb,var(--b) 40%,transparent);box-shadow:0 14px 26px -12px color-mix(in srgb,var(--b) 60%,transparent);translate:0 -3px}
-.soc.ig:hover svg,.soc.ig:focus-visible svg{fill:url(#igGrad)}
+.soc{position:relative;isolation:isolate;overflow:hidden;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--sheet);border:1px solid var(--line);color:var(--ink);box-shadow:var(--chip-shadow);cursor:pointer;transition:color .3s,border-color .3s,box-shadow .35s,translate .35s var(--ease),scale .12s}
+.soc::before{content:"";position:absolute;left:50%;top:50%;z-index:-1;width:calc(100% + 6px);height:calc(100% + 6px);border-radius:50%;background:var(--sheet);translate:-50% -50%;transition:width .4s var(--ease),height .4s var(--ease)}
+.soc::after{content:"";position:absolute;inset:1px;z-index:-2;border-radius:50%;background:var(--bg)}
+.soc svg{width:20px;height:20px;fill:currentColor}
+.soc:hover::before,.soc:focus-visible::before{width:0;height:0}
+.soc:hover,.soc:focus-visible{color:#fff;background:var(--bg) padding-box;border-color:color-mix(in srgb,var(--glow) 60%,var(--ink));box-shadow:0 14px 26px -12px var(--glow);translate:0 -3px}
+.soc:active{scale:.85}
 .form-card{position:relative;padding:clamp(22px,3vw,38px);border-radius:30px}
 .form{display:grid;gap:14px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -974,6 +983,14 @@ main,.footer{position:relative;z-index:2;overflow-x:clip}
           <div>
             <p class="tile-value">Full stack &amp; MERN roles</p>
             <p class="tile-sub">Product teams building with React, Next.js, Node.js and Python.</p>
+          </div>
+        </article>
+        <article class="tile pcard tilt w12" id="liveTile" hidden>
+          <div class="tile-head"><span class="label">This website &middot; live</span><span class="pill now"><span class="pulse"></span>Live</span></div>
+          <div class="live-stats">
+            <div class="live-stat"><span class="label">Visitors</span><p class="tile-value" data-stat="visitors">0</p><p class="tile-sub">People who have visited</p></div>
+            <div class="live-stat"><span class="label">Active now</span><p class="tile-value" data-stat="active">0</p><p class="tile-sub">Browsing right now</p></div>
+            <div class="live-stat"><span class="label">Contact attempts</span><p class="tile-value" data-stat="contacts">0</p><p class="tile-sub">Tried to get in touch</p></div>
           </div>
         </article>
       </div>
@@ -1535,20 +1552,20 @@ $$('[data-tools]').forEach(el => {
   el.innerHTML = el.dataset.tools.split(';').map(t => { const [n, d] = t.split('|'); return `<div class="tool">${ico(n)}<div><b>${TECH[n]}</b><small>${d}</small></div></div>`; }).join('');
 });
 const SOCIALS = [
-  { n: 'github', label: 'GitHub', brand: '#181717', brandD: '#ffffff', href: 'https://github.com/satya643' },
-  { n: 'linkedin', label: 'LinkedIn', brand: '#0A66C2', href: 'https://www.linkedin.com/in/satya-prakash-41451328a' },
-  { n: 'gmail', label: 'Copy email address', brand: '#EA4335', email: true },
-  { n: 'instagram', label: 'Instagram', brand: '#E1306C', ig: true, href: '' },
-  { n: 'facebook', label: 'Facebook', brand: '#0866FF', href: '' },
-  { n: 'x', label: 'X', brand: '#000000', brandD: '#ffffff', href: '' }
+  { n: 'github', label: 'GitHub', bg: '#000000', glow: '#000000', href: 'https://github.com/satya643' },
+  { n: 'linkedin', label: 'LinkedIn', bg: 'linear-gradient(120deg,#0077b5,#00a0dc)', glow: '#0A66C2', href: 'https://www.linkedin.com/in/satya-prakash-41451328a' },
+  { n: 'gmail', label: 'Copy email address', bg: 'linear-gradient(120deg,#EA4335,#C5221F)', glow: '#EA4335', email: true },
+  { n: 'instagram', label: 'Instagram', bg: 'linear-gradient(120deg,#833ab4,#fd1d1d,#fcb045)', glow: '#E1306C', href: '' },
+  { n: 'facebook', label: 'Facebook', bg: 'linear-gradient(120deg,#1877F2,#0866FF)', glow: '#0866FF', href: '' },
+  { n: 'x', label: 'X', bg: '#000000', glow: '#000000', href: '' }
 ].filter(s => s.email || s.href);
 $$('[data-socials]').forEach(el => {
   el.innerHTML = SOCIALS.map(s => {
-    const style = `--brand:${s.brand}${s.brandD ? ';--brand-d:' + s.brandD : ''}`;
+    const style = `--bg:${s.bg};--glow:${s.glow}`;
     const icon = `<svg aria-hidden="true"><use href="#s-${s.n}"/></svg>`;
     return s.href
-      ? `<a class="soc${s.ig ? ' ig' : ''}" style="${style}" aria-label="${s.label}" href="${s.href}" target="_blank" rel="noopener noreferrer">${icon}</a>`
-      : `<button type="button" class="soc${s.ig ? ' ig' : ''}" style="${style}" aria-label="${s.label}" data-email>${icon}</button>`;
+      ? `<a class="soc" style="${style}" aria-label="${s.label}" href="${s.href}" target="_blank" rel="noopener noreferrer">${icon}</a>`
+      : `<button type="button" class="soc" style="${style}" aria-label="${s.label}" data-email>${icon}</button>`;
   }).join('');
 });
 
@@ -2324,4 +2341,60 @@ if (HAS_GSAP) {
 })();
 </script>
 
+<script>
+/* ---------- live site stats (api/stats.js) ---------- */
+(() => {
+  const tile = document.getElementById('liveTile');
+  if (!tile || !window.fetch) return;
+  const out = {
+    visitors: tile.querySelector('[data-stat="visitors"]'),
+    active: tile.querySelector('[data-stat="active"]'),
+    contacts: tile.querySelector('[data-stat="contacts"]'),
+  };
+  const newId = () => (window.crypto && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : 'v' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+  let id = null, firstOfSession = true;
+  try { id = localStorage.getItem('sp-vid'); if (!id) { id = newId(); localStorage.setItem('sp-vid', id); } } catch (e) { id = id || newId(); }
+  try { firstOfSession = !sessionStorage.getItem('sp-seen'); sessionStorage.setItem('sp-seen', '1'); } catch (e) {}
+  const fmt = new Intl.NumberFormat('en-IN');
+
+  function show(stats) {
+    for (const key in out) {
+      if (typeof stats[key] !== 'number') continue;
+      const text = fmt.format(stats[key]);
+      if (out[key].textContent !== text) {
+        out[key].textContent = text;
+        out[key].classList.remove('bump'); void out[key].offsetWidth; out[key].classList.add('bump');
+      }
+    }
+    if (tile.hidden) { tile.hidden = false; if (window.ScrollTrigger) ScrollTrigger.refresh(); }
+  }
+
+  async function send(type) {
+    try {
+      const res = await fetch('/api/stats', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, id }),
+        keepalive: true,
+      });
+      if (res.ok) show(await res.json());
+    } catch (e) {}
+  }
+
+  send(firstOfSession ? 'visit' : 'ping');
+  // Heartbeat while the tab is open and visible; a visitor stays "active" for 60s after the last one.
+  setInterval(() => { if (document.visibilityState === 'visible') send('ping'); }, 20000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') send('ping'); });
+  addEventListener('pagehide', () => { try { navigator.sendBeacon('/api/stats', JSON.stringify({ type: 'leave', id })); } catch (e) {} });
+
+  // Someone trying to reach you: copying the email or phone, opening an email link, or sending the form.
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-email],[data-copy],a[href^="mailto:"],a[href^="tel:"]')) send('contact');
+  }, true);
+  const form = document.getElementById('contactForm');
+  if (form) form.addEventListener('submit', () => { if (form.checkValidity()) send('contact'); });
+})();
+</script>
 </body></html>
